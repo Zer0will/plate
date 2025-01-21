@@ -7,10 +7,10 @@ import {Button} from "@/components/ui/button";
 
 export default function LocationsMap() {
 	return (
-		<div className='min-h-screen bg-[#111111] py-12 md:py-20 px-4'>
-			<h1 className='text-white text-3xl md:text-5xl font-bold text-center mb-8 md:mb-16'>OUR MULTIPLE LOCATIONS</h1>
+		<div className='  pt-[150px]'>
+			<p className='h3 text-center font-gilroy text-white'>OUR MULTIPLE LOCATIONS</p>
 
-			<div className='max-w-[1200px] mx-auto relative'>
+			<div className='max-w-[1200px] mx-auto relative  pt-14'>
 				{/* Map Container */}
 				<Card className='relative w-full aspect-[16/9] border-0 bg-transparent overflow-hidden'>
 					<Image src='/images/location.png' alt='Locations Map' className='object-cover rounded-3xl' width={1260} height={536} />
@@ -27,18 +27,23 @@ export default function LocationsMap() {
 					</div>
 
 					{/* Hours Card */}
-					<Card className='absolute bottom-6 right-6 bg-[#1A1A1A]/90 backdrop-blur-sm border-0 p-6 max-w-[400px]'>
-						<div className='flex items-center gap-3 mb-4'>
-							<Calendar className='w-6 h-6 text-[#F5E6BE]' />
-							<h3 className='text-white text-xl font-medium'>Hours</h3>
+					<Card className='absolute bottom-48 right-6 bg-[#1A1A1A]/90 backdrop-blur-sm border-0 p-5  '>
+						<div className='flex flex-col items-start gap-3 mb-4'>
+							<Image src='/icons/time.svg' width={36} height={36} alt='time' />
+							<h3 className='font-poppins h9 font-light text-white'>Hours</h3>
 						</div>
-						<div className='space-y-2 text-gray-200 mb-6'>
+						<div className='space-y-2 font-poppins h9 font-light text-white mb-6'>
 							<p>Monday - Friday: 11:00 AM – 10:00 PM</p>
 							<p>Saturday - Sunday: 9:00 AM – 11:00 PM</p>
 						</div>
-						<Button className='w-full bg-[#F5E6BE] hover:bg-[#E6D4A7] text-black font-medium' variant='ghost'>
-							Meet the chef
-						</Button>
+						<div className='flex items-center justify-center'>
+							<Button
+								className='w-[277px] h-[37px] px-8 rounded-[24px] py-1.5 font-poppins font-light h8 text-[#232323]'
+								style={{background: "linear-gradient(90deg, #f7efc1 0%, #e0bc6b 100%)"}}
+							>
+								Meet the chef
+							</Button>
+						</div>
 					</Card>
 				</Card>
 			</div>

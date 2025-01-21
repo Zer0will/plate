@@ -7,16 +7,15 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				inter: ["var(--font-inter)"],
-				"dm-sans": ["var(--font-dm-sans)"],
-				"noto-sans": ["var(--font-noto-sans)"],
-				georgia: ["var(--font-georgia)"],
+				poppins: ["var(--font-poppins)"],
+
+				gilroy: ["var(--font-gilroy)"],
 			},
 			container: {
 				center: true,
 				padding: "1rem",
 				screens: {
-					xl: "1300px",
+					xl: "1260px",
 				},
 			},
 			colors: {
@@ -88,6 +87,9 @@ export default {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
+			backgroundImage: {
+				"bg-image": "url('/icons/hole-bg.svg')",
+			},
 		},
 	},
 	plugins: [
@@ -97,7 +99,7 @@ export default {
 				/* Headings */
 				".h1": {
 					fontSize: "46px",
-					lineHeight: "150%",
+
 					fontWeight: "400",
 					"@screen lg": {
 						fontSize: "72px",
@@ -109,7 +111,6 @@ export default {
 
 				".h2": {
 					fontSize: "44px",
-					lineHeight: "125%",
 					fontWeight: "700",
 					textTransform: "uppercase",
 					"@screen lg": {
@@ -120,22 +121,6 @@ export default {
 					},
 				},
 				".h3": {
-					fontSize: "16px",
-					fontWeight: "300",
-					"@screen md": {
-						fontSize: "18px",
-					},
-				},
-
-				".h4": {
-					fontSize: "20px",
-					fontWeight: "300",
-					"@screen md": {
-						fontSize: "22px",
-					},
-				},
-
-				".h5": {
 					fontSize: "24px",
 					textTransform: "uppercase",
 					fontWeight: "700",
@@ -146,7 +131,23 @@ export default {
 						fontSize: "44px",
 					},
 				},
+				".h4": {
+					fontSize: "28px",
+					fontWeight: "400",
+				},
+				".h5": {
+					fontSize: "26px",
+					fontWeight: "500",
+					lineHeight: "108%",
+				},
 				".h6": {
+					fontSize: "20px",
+					fontWeight: "300",
+					"@screen md": {
+						fontSize: "22px",
+					},
+				},
+				".h7": {
 					fontSize: "12px",
 					fontWeight: "300",
 					"@screen md": {
@@ -157,28 +158,19 @@ export default {
 						fontWeight: "400",
 					},
 				},
-
-				".h7": {
-					fontSize: "16px",
-					fontWeight: "500",
-				},
-
 				".h8": {
-					fontSize: "28px",
-					fontWeight: "400",
+					fontSize: "16px",
+					fontWeight: "300",
+					"@screen md": {
+						fontSize: "18px",
+					},
 				},
 
 				".h9": {
-					fontSize: "26px",
+					fontSize: "14px",
 					fontWeight: "500",
-					lineHeight: "108%",
-				},
-
-				".h10": {
-					fontSize: "15px",
-					fontWeight: "300",
 					"@screen md": {
-						fontSize: "10px",
+						fontSize: "16px",
 					},
 				},
 			};

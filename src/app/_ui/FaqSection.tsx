@@ -55,7 +55,7 @@ export default function FAQSection() {
 	];
 
 	return (
-		<div className='min-h-screen bg-[#111111] py-12 md:py-20 px-4 relative'>
+		<div className=' pt-[150px] relative'>
 			<div className='max-w-[900px] mx-auto'>
 				<h1 className='text-white text-3xl md:text-5xl font-bold text-center mb-12'>FREQUENTLY ASKED QUESTIONS</h1>
 

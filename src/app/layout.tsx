@@ -1,16 +1,29 @@
 import type {Metadata} from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {Poppins} from "next/font/google";
+import Nav from "@/components/Nav";
 
-const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
+const poppins = Poppins({
+	subsets: ["latin"],
+	weight: ["300", "400", "500", "600", "700"],
+	variable: "--font-poppins",
 });
-const geistMono = localFont({
-	src: "./fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
+const gilroy = localFont({
+	src: [
+		{
+			path: "./fonts/gilroy/Gilroy-Regular.ttf",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "./fonts/gilroy/Gilroy-Bold.ttf",
+			weight: "700",
+			style: "normal",
+		},
+	],
+	variable: "--font-gilroy",
+	display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +38,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={` bg-[#0F0F0F] ${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+			<body className={` bg-[#0F0F0F] bg-bg-image bg-no-repeat bg-cover  ${gilroy.variable} ${poppins.variable} antialiased`}>
+				<Nav />
+				{children}
+			</body>
 		</html>
 	);
 }

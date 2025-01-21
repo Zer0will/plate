@@ -8,46 +8,65 @@ const chefs = [
 		role: "Head",
 		image: "/images/team1.png",
 		showVisitButton: true,
+		width: 300,
+		height: 374,
 	},
 	{
 		name: "Mandla",
 		role: "Team Leader",
 		image: "/images/team2.png",
+		width: 300,
+		height: 307,
 	},
 	{
 		name: "Amina",
 		role: "Manager",
 		image: "/images/team3.png",
+		width: 300,
+		height: 307,
 	},
 	{
 		name: "Eshe",
 		role: "Supervisor",
 		image: "/images/team4.png",
+		width: 300,
+		height: 307,
 	},
 ];
 
 export default function TeamSection() {
 	return (
-		<div className='min-h-screen bg-black text-white py-16 px-4 md:px-6 lg:px-8'>
-			<div className='max-w-7xl mx-auto space-y-12'>
+		<div className=' text-white   pt-[150px] w-full'>
+			<div className='max-w-7xl mx-auto w-full'>
 				{/* Header */}
-				<h1 className='text-4xl md:text-5xl font-bold text-center'>MEET THE CHEFS</h1>
+				<p className='h3 text-center font-gilroy text-white'>MEET THE CHEFS</p>
 
 				{/* Chef Grid */}
-				<div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+				<div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6  pt-14'>
 					{chefs.map(chef => (
-						<Card key={chef.name} className='bg-zinc-900/50 border-gray-800 overflow-hidden group'>
-							<CardContent className='p-6 space-y-4'>
-								<div className='aspect-square relative rounded-2xl overflow-hidden'>
-									<Image src={chef.image} alt={`${chef.name} - ${chef.role}`} fill className='object-cover transition-transform group-hover:scale-105' />
-								</div>
-								<div className='space-y-1 text-center'>
-									<h2 className='text-xl font-semibold text-white'>{chef.name}</h2>
-									<p className='text-gray-400'>{chef.role}</p>
-								</div>
-								{chef.showVisitButton && <Button className='w-full bg-[#E5D9B6] text-black hover:bg-[#E5D9B6]/90'>Visit Chef</Button>}
-							</CardContent>
-						</Card>
+						<>
+							<div className='aspect-square relative rounded-2xl overflow-hidden'>
+								<Image src={chef.image} alt={`${chef.name} - ${chef.role}`} fill className='object-cover transition-transform group-hover:scale-105' />
+							</div>
+							<Card key={chef.name} className='bg-[#1E1E1E] border-none overflow-hidden group rounded-[40px] width-{chef.width} height-{chef.height}'>
+								<CardContent className='p-6 space-y-4'>
+									<div className='space-y-1 text-center'>
+										<h2 className='font-poppins h6 font-medium text-white'>{chef.name}</h2>
+										<p className='text-[#FFFDF4] h7'>{chef.role}</p>
+									</div>
+									{chef.showVisitButton && (
+										<div className='flex justify-center items-center'>
+											<Button
+												className=' h8 text-[#1e1e1e] rounded-[24px] px-8 py-1.5 w-[147px] h-[37px]'
+												style={{background: "linear-gradient(90deg, #f7efc1 0%, #e0bc6b 100%)"}}
+											>
+												Visit Chef
+											</Button>
+										</div>
+									)}
+								</CardContent>
+							</Card>
+						</>
 					))}
 				</div>
 			</div>
